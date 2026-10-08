@@ -48,10 +48,10 @@ const slides: HeroSlide[] = [
     alt: "Vista aérea de Calama",
     position: "center center",
     mobilePosition: "62% center",
-    eyebrow: "PRESENCIA EN CALAMA Y SANTIAGO",
-    title: "Cerca de las necesidades de cada operación",
+    eyebrow: "COBERTURA OPERATIVA A NIVEL NACIONAL",
+    title: "Capacidad de respuesta en todo Chile",
     description:
-      "Apoyamos a empresas e instituciones públicas y privadas mediante soluciones técnicas adaptadas a los requerimientos de cada proyecto.",
+      "Desde Calama y Santiago coordinamos soluciones para el Norte Grande, Norte Chico, Zona Central, Zona Sur y Zona Austral.",
   },
 ];
 

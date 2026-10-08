@@ -181,7 +181,7 @@
 
 .servicesGrid {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(5, minmax(0, 1fr));
   gap: 12px;
 }
 
@@ -288,9 +288,9 @@
 
 .cardBody {
   display: flex;
-  min-height: 365px;
+  min-height: 405px;
   flex-direction: column;
-  padding: 27px 23px 25px;
+  padding: 25px 19px 23px;
 }
 
 .category {
@@ -307,7 +307,7 @@
   min-height: 76px;
   margin: 0;
   color: white;
-  font-size: clamp(19px, 1.4vw, 23px);
+  font-size: clamp(17px, 1.25vw, 21px);
   font-weight: 500;
   line-height: 1.25;
   letter-spacing: -0.04em;

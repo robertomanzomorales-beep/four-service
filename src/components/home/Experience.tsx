@@ -204,13 +204,6 @@ export default function Experience() {
         className={styles.section}
         aria-labelledby="experience-title"
       >
-        <div
-          className={styles.backgroundNumber}
-          aria-hidden="true"
-        >
-          11
-        </div>
-
         <div className={styles.container}>
           <div className={styles.sectionHeader}>
             <Reveal>
@@ -252,14 +245,6 @@ export default function Experience() {
                 infraestructura, mantenimiento técnico,
                 equipamiento clínico y sistemas industriales.
               </p>
-
-              <div className={styles.gallerySummary}>
-                <strong>11</strong>
-
-                <span>
-                  registros seleccionados de trabajos ejecutados
-                </span>
-              </div>
             </Reveal>
           </div>
 

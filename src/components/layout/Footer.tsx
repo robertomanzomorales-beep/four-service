@@ -12,8 +12,9 @@ const navigation = [
 ];
 
 const services = [
-  "Infraestructura y obras civiles",
-  "Equipos médicos y área dental",
+  "Mantención de infraestructura industrial",
+  "Mantenimiento de equipos médicos y área dental",
+  "Obras civiles",
   "Transporte de personal",
   "Importaciones y abastecimiento",
 ];
@@ -107,8 +108,7 @@ export default function Footer() {
             </p>
 
             <p>
-              Huaytiquina 1849, Villa Huaytiquina,
-              Calama
+              Huaytiquina 1849, Calama
             </p>
           </address>
         </Reveal>
@@ -122,7 +122,7 @@ export default function Footer() {
           </p>
 
           <span>
-            Calama · Santiago · Chile
+            Cobertura nacional · Chile
           </span>
 
           <a

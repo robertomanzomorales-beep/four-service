@@ -24,7 +24,7 @@ export default function Reveal({
   children,
   className = "",
   delay = 0,
-  distance = 28,
+  distance = 56,
   direction = "up",
   once = true,
 }: RevealProps) {
@@ -42,9 +42,13 @@ export default function Reveal({
       "(prefers-reduced-motion: reduce)"
     ).matches;
 
-    if (prefersReducedMotion || !("IntersectionObserver" in window)) {
-      setVisible(true);
+    if (prefersReducedMotion) {
       return;
+    }
+
+    if (!("IntersectionObserver" in window)) {
+      const frame = requestAnimationFrame(() => setVisible(true));
+      return () => cancelAnimationFrame(frame);
     }
 
     const observer = new IntersectionObserver(
@@ -64,8 +68,8 @@ export default function Reveal({
         }
       },
       {
-        threshold: 0.12,
-        rootMargin: "0px 0px -7% 0px",
+        threshold: 0.1,
+        rootMargin: "0px 0px -5% 0px",
       }
     );
 

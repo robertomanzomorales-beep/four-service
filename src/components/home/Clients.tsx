@@ -125,9 +125,10 @@ export default function Clients() {
               </h3>
 
               <p>
-                Nuestra experiencia combina conocimiento técnico,
-                adaptación y una atención cercana para desarrollar
-                soluciones según las necesidades de cada cliente.
+                Más de 40 contratos desarrollados para 33
+                instituciones respaldan nuestra capacidad de
+                respuesta, con presencia en todas las regiones de
+                Chile.
               </p>
 
               <div className={styles.panelFooter}>
@@ -166,7 +167,7 @@ export default function Clients() {
               <article>
                 <p>SECTOR PRIVADO</p>
 
-                <h3>Empresas e instituciones instituciones privadas</h3>
+                <h3>Empresas e instituciones privadas</h3>
 
                 <span>
                   Soluciones técnicas y operativas adaptadas a cada

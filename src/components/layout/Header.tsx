@@ -195,7 +195,7 @@ export default function Header() {
 
           <div className={styles.utilityRight}>
             <span className={styles.locations}>
-              PRESENCIA EN CALAMA Y SANTIAGO
+              COBERTURA OPERATIVA A NIVEL NACIONAL
             </span>
 
             <span

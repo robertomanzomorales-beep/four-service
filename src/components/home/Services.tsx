@@ -5,17 +5,17 @@ import styles from "./Services.module.css";
 const services = [
   {
     number: "01",
-    category: "INFRAESTRUCTURA Y OBRAS CIVILES",
-    title: "Continuidad para instalaciones críticas",
+    category: "MANTENCIÓN DE INFRAESTRUCTURA INDUSTRIAL",
+    title: "Continuidad para instalaciones y sistemas críticos",
     description:
-      "Mantenimiento, conservación, reparación y ejecución de obras para recintos públicos y privados, considerando infraestructura eléctrica, redes sanitarias e industriales y trabajos estructurales.",
+      "Mantención preventiva y correctiva para preservar el funcionamiento, la seguridad y la vida útil de instalaciones industriales.",
     image:
       "/images/services/mantenimiento-infraestructura-construccion.webp",
     alt: "Mantenimiento de infraestructura ejecutado por Four Service",
     specialties: [
       "Climatización industrial",
       "Refrigeración y calefacción",
-      "Obras civiles y estructurales",
+      "Redes eléctricas y sanitarias",
     ],
   },
   {
@@ -34,6 +34,20 @@ const services = [
   },
   {
     number: "03",
+    category: "OBRAS CIVILES",
+    title: "Ejecución y recuperación de infraestructura",
+    description:
+      "Desarrollo de obras, reparaciones y adecuaciones para espacios públicos, corporativos e industriales, con foco en seguridad y cumplimiento.",
+    image: "/images/experience/10-obras-civiles-cancha-deportiva.webp",
+    alt: "Obra civil ejecutada por Four Service",
+    specialties: [
+      "Reparaciones estructurales",
+      "Habilitación de espacios",
+      "Conservación y terminaciones",
+    ],
+  },
+  {
+    number: "04",
     category: "TRANSPORTE DE PERSONAL",
     title: "Traslados coordinados para cada operación",
     description:
@@ -47,7 +61,7 @@ const services = [
     ],
   },
   {
-    number: "04",
+    number: "05",
     category: "IMPORTACIONES Y ABASTECIMIENTO",
     title: "Suministro técnico sin fronteras",
     description:
@@ -144,7 +158,7 @@ export default function Services() {
                     src={service.image}
                     alt={service.alt}
                     fill
-                    sizes="(max-width: 660px) 100vw, (max-width: 1180px) 50vw, 330px"
+                    sizes="(max-width: 660px) 100vw, (max-width: 1180px) 50vw, 260px"
                   />
 
                   <div

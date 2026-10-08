@@ -50,8 +50,8 @@ export default function About() {
           >
             <div className={styles.imageFrame}>
               <Image
-                src="/images/experience/02-izaje-bandera-chile-calama.webp"
-                alt="Trabajo de izaje realizado por Four Service en Calama"
+                src="/images/hero/40-horas-hero.webp"
+                alt="Profesional de Four Service trabajando en terreno"
                 fill
                 sizes="(max-width: 820px) 100vw, 46vw"
                 className={styles.image}
@@ -68,8 +68,8 @@ export default function About() {
               <span className={styles.locationLine} />
 
               <div>
-                <small>PRESENCIA OPERATIVA</small>
-                <strong>Calama y Santiago</strong>
+                <small>COBERTURA OPERATIVA</small>
+                <strong>A nivel nacional</strong>
               </div>
             </div>
 
@@ -106,9 +106,10 @@ export default function About() {
                 infraestructura y sistemas industriales, equipos
                 médicos y dentales, transporte de personal, obras
                 civiles e importaciones. Desde nuestras sedes en
-                Santiago y Calama respondemos a empresas e
-                instituciones que requieren eficiencia, continuidad
-                y confianza en sus operaciones.
+                Santiago y Calama coordinamos servicios en el Norte
+                Grande, Norte Chico, Zona Central, Zona Sur y Zona
+                Austral, respondiendo con eficiencia, continuidad y
+                confianza en cada operación.
               </p>
             </Reveal>
 

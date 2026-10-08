@@ -85,7 +85,7 @@ export default function Contact() {
 
           <Reveal delay={80}>
             <p className={styles.sectionDescriptor}>
-              CALAMA · SANTIAGO
+              ATENCIÓN A NIVEL NACIONAL
             </p>
           </Reveal>
         </div>
@@ -183,7 +183,7 @@ export default function Contact() {
                   <div>
                     <dt>Sede Calama</dt>
                     <dd>
-                      Huaytiquina 1849, Villa Huaytiquina
+                      Huaytiquina 1849, Calama
                     </dd>
                   </div>
                 </dl>
@@ -317,13 +317,16 @@ export default function Contact() {
                         Seleccione un servicio
                       </option>
 
-                      <option value="Mantenimiento de infraestructura y obras civiles">
-                        Mantenimiento de infraestructura y obras
-                        civiles
+                      <option value="Mantención de infraestructura industrial">
+                        Mantención de infraestructura industrial
                       </option>
 
-                      <option value="Equipos médicos y área dental">
-                        Equipos médicos y área dental
+                      <option value="Obras civiles">
+                        Obras civiles
+                      </option>
+
+                      <option value="Mantenimiento de equipos médicos y área dental">
+                        Mantenimiento de equipos médicos y área dental
                       </option>
 
                       <option value="Transporte de personal">
