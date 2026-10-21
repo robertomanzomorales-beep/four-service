@@ -90,7 +90,6 @@ export default function Services() {
       aria-labelledby="services-title"
     >
       <div className={styles.gridBackground} aria-hidden="true" />
-      <div className={styles.glow} aria-hidden="true" />
 
       <div className={styles.container}>
         <div className={styles.sectionHeader}>

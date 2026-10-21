@@ -31,36 +31,6 @@
   );
 }
 
-.glow {
-  display: none;
-  position: absolute;
-  z-index: -2;
-  top: -290px;
-  right: -220px;
-  width: 650px;
-  height: 650px;
-  border: 1px solid rgb(68 214 44 / 11%);
-  border-radius: 50%;
-}
-
-.glow::before,
-.glow::after {
-  position: absolute;
-  content: "";
-  border-radius: 50%;
-}
-
-.glow::before {
-  inset: 105px;
-  border: 1px solid rgb(30 80 255 / 18%);
-}
-
-.glow::after {
-  inset: 225px;
-  background: rgb(30 80 255 / 7%);
-  filter: blur(30px);
-}
-
 .container {
   position: relative;
   z-index: 1;

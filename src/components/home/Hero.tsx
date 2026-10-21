@@ -227,23 +227,27 @@ export default function Hero() {
       <div className={styles.gridTexture} aria-hidden="true" />
 
       <div className={styles.heroInner}>
-        <Reveal
+        <div
           key={`hero-content-${activeSlide}`}
           className={styles.content}
-          delay={80}
-          distance={36}
         >
-          <p className={styles.eyebrow}>
-            {currentSlide.eyebrow}
-          </p>
+          <Reveal distance={18}>
+            <p className={styles.eyebrow}>
+              {currentSlide.eyebrow}
+            </p>
+          </Reveal>
 
-          <h1>{currentSlide.title}</h1>
+          <Reveal delay={140} distance={38}>
+            <h1>{currentSlide.title}</h1>
+          </Reveal>
 
-          <p className={styles.description}>
-            {currentSlide.description}
-          </p>
+          <Reveal delay={280} distance={30}>
+            <p className={styles.description}>
+              {currentSlide.description}
+            </p>
+          </Reveal>
 
-          <div className={styles.actions}>
+          <Reveal className={styles.actions} delay={420} distance={24}>
             <a
               className={styles.primaryButton}
               href="#contacto"
@@ -257,8 +261,8 @@ export default function Hero() {
             >
               Conocer servicios
             </a>
-          </div>
-        </Reveal>
+          </Reveal>
+        </div>
 
         <div className={styles.sideLabel} aria-hidden="true">
           <span />

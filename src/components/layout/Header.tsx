@@ -8,6 +8,7 @@ import {
   useState,
 } from "react";
 import styles from "./Header.module.css";
+import BrandGeometry from "@/components/ui/BrandGeometry";
 
 const navigation = [
   { label: "Inicio", href: "#inicio" },
@@ -303,9 +304,8 @@ export default function Header() {
         data-open={menuOpen}
         aria-hidden={!menuOpen}
       >
-        <div
+        <BrandGeometry
           className={styles.mobileDecoration}
-          aria-hidden="true"
         />
 
         <div className={styles.mobileMenuInner}>

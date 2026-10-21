@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Reveal from "@/components/ui/Reveal";
+import BrandGeometry from "@/components/ui/BrandGeometry";
 import styles from "./About.module.css";
 
 const credentials = [
@@ -24,7 +25,7 @@ export default function About() {
       className={styles.section}
       aria-labelledby="about-title"
     >
-      <div className={styles.backgroundDetail} aria-hidden="true" />
+      <BrandGeometry className={styles.backgroundDetail} />
 
       <div className={styles.container}>
         <div className={styles.sectionHeader}>

@@ -9,29 +9,12 @@
 .backgroundDetail {
   position: absolute;
   top: 85px;
-  left: -260px;
+  left: -230px;
   width: 560px;
   height: 560px;
-  border: 1px solid rgb(30 80 255 / 6%);
-  border-radius: 50%;
+  color: rgb(30 80 255 / 9%);
   pointer-events: none;
-}
-
-.backgroundDetail::before,
-.backgroundDetail::after {
-  position: absolute;
-  content: "";
-  border-radius: 50%;
-}
-
-.backgroundDetail::before {
-  inset: 75px;
-  border: 1px solid rgb(68 214 44 / 8%);
-}
-
-.backgroundDetail::after {
-  inset: 180px;
-  background: rgb(30 80 255 / 3%);
+  transform: rotate(8deg);
 }
 
 .container {
@@ -167,26 +150,14 @@
     );
 }
 
-.panelIntroduction::before {
+.panelGeometry {
   position: absolute;
-  right: -145px;
-  bottom: -145px;
-  width: 365px;
-  height: 365px;
-  content: "";
-  border: 1px solid rgb(255 255 255 / 13%);
-  border-radius: 50%;
-}
-
-.panelIntroduction::after {
-  position: absolute;
-  right: -65px;
-  bottom: -65px;
-  width: 205px;
-  height: 205px;
-  content: "";
-  border: 1px solid rgb(68 214 44 / 24%);
-  border-radius: 50%;
+  right: -105px;
+  bottom: -90px;
+  width: 390px;
+  height: 390px;
+  color: rgb(255 255 255 / 18%);
+  pointer-events: none;
 }
 
 .panelNumber {
@@ -354,15 +325,14 @@
   background: var(--brand-green);
 }
 
-.privateSector article::after {
+.privateGeometry {
   position: absolute;
   right: -45px;
   bottom: -65px;
-  width: 150px;
-  height: 150px;
-  content: "";
-  border: 1px solid rgb(6 16 42 / 13%);
-  border-radius: 50%;
+  width: 185px;
+  height: 185px;
+  color: rgb(6 16 42 / 15%);
+  pointer-events: none;
 }
 
 .privateSector p {

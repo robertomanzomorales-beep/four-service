@@ -1,4 +1,5 @@
 import Reveal from "@/components/ui/Reveal";
+import BrandGeometry from "@/components/ui/BrandGeometry";
 import styles from "./Clients.module.css";
 
 const sectors = [
@@ -53,7 +54,7 @@ export default function Clients() {
       className={styles.section}
       aria-labelledby="clients-title"
     >
-      <div className={styles.backgroundDetail} aria-hidden="true" />
+      <BrandGeometry className={styles.backgroundDetail} />
 
       <div className={styles.container}>
         <div className={styles.sectionHeader}>
@@ -110,6 +111,7 @@ export default function Clients() {
             className={styles.panelIntroduction}
             direction="right"
           >
+            <BrandGeometry className={styles.panelGeometry} />
             <div className={styles.panelNumber} aria-hidden="true">
               FS
             </div>
@@ -165,6 +167,7 @@ export default function Clients() {
               distance={25}
             >
               <article>
+                <BrandGeometry className={styles.privateGeometry} />
                 <p>SECTOR PRIVADO</p>
 
                 <h3>Empresas e instituciones privadas</h3>

@@ -301,16 +301,9 @@
     right: -150px;
     width: 390px;
     height: 390px;
-    border: 1px solid rgb(68 214 44 / 16%);
-    border-radius: 50%;
-  }
-
-  .mobileDecoration::before {
-    position: absolute;
-    inset: 72px;
-    content: "";
-    border: 1px solid rgb(30 80 255 / 25%);
-    border-radius: 50%;
+    color: rgb(68 214 44 / 15%);
+    pointer-events: none;
+    transform: rotate(-8deg);
   }
 
   .mobileMenuInner {

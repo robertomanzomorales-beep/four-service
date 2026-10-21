@@ -14,29 +14,12 @@
 .backgroundDetail {
   position: absolute;
   top: 108px;
-  right: -245px;
-  width: 540px;
-  height: 540px;
-  border: 1px solid rgb(30 80 255 / 7%);
-  border-radius: 50%;
+  right: -225px;
+  width: 590px;
+  height: 590px;
+  color: rgb(30 80 255 / 9%);
   pointer-events: none;
-}
-
-.backgroundDetail::before,
-.backgroundDetail::after {
-  position: absolute;
-  content: "";
-  border-radius: 50%;
-}
-
-.backgroundDetail::before {
-  inset: 73px;
-  border: 1px solid rgb(68 214 44 / 9%);
-}
-
-.backgroundDetail::after {
-  inset: 160px;
-  background: rgb(30 80 255 / 2.5%);
+  transform: rotate(-8deg);
 }
 
 .container {
