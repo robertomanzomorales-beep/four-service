@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Sora } from "next/font/google";
+import Preloader from "@/components/ui/Preloader";
+import FloatingActions from "@/components/ui/FloatingActions";
 import "./globals.css";
 
 const sora = Sora({
@@ -20,7 +22,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es">
-      <body className={sora.className}>{children}</body>
+      <body className={sora.className}>
+        <Preloader />
+        {children}
+        <FloatingActions />
+      </body>
     </html>
   );
 }

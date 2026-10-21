@@ -10,8 +10,8 @@ const services = [
     description:
       "Mantención preventiva y correctiva para preservar el funcionamiento, la seguridad y la vida útil de instalaciones industriales.",
     image:
-      "/images/services/mantenimiento-infraestructura-construccion.webp",
-    alt: "Mantenimiento de infraestructura ejecutado por Four Service",
+      "/images/services/personal-femenino-soporte-tecnico.webp",
+    alt: "Profesional de Four Service realizando soporte técnico en instalaciones industriales",
     specialties: [
       "Climatización industrial",
       "Refrigeración y calefacción",
@@ -52,8 +52,8 @@ const services = [
     title: "Traslados coordinados para cada operación",
     description:
       "Servicios de transporte para empresas e instituciones, visitas técnicas, reuniones, inspecciones y desplazamiento planificado de grupos pequeños o medianos.",
-    image: "/images/services/transporte-personal.webp",
-    alt: "Servicio de transporte de personal",
+    image: "/images/services/conductora-traslado-four-service.webp",
+    alt: "Conductora de Four Service en un vehículo de traslado de personal",
     specialties: [
       "Servicios programados",
       "Traslados institucionales",

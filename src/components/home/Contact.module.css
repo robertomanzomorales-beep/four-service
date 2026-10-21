@@ -1,6 +1,6 @@
 .section {
   position: relative;
-  padding: 116px 0 120px;
+  padding: var(--section-space) 0;
   overflow: hidden;
   background: #edf2f7;
   scroll-margin-top: 108px;
@@ -82,9 +82,9 @@
   max-width: 730px;
   margin: 0;
   color: var(--navy-950);
-  font-size: clamp(39px, 3.7vw, 58px);
+  font-size: var(--section-title);
   font-weight: 500;
-  line-height: 1.08;
+  line-height: 1.16;
   letter-spacing: -0.055em;
   text-wrap: balance;
 }
@@ -103,6 +103,8 @@
 }
 
 .contactGrid {
+  border-radius: var(--radius-card);
+  overflow: clip;
   display: grid;
   grid-template-columns:
     minmax(330px, 0.78fr)
@@ -169,7 +171,7 @@
 .informationContent h3 {
   max-width: 410px;
   margin: 0;
-  font-size: clamp(29px, 2.65vw, 41px);
+  font-size: clamp(25px, 2.3vw, 33px);
   font-weight: 500;
   line-height: 1.14;
   letter-spacing: -0.05em;
@@ -179,7 +181,7 @@
   max-width: 390px;
   margin: 22px 0 0;
   color: rgb(255 255 255 / 63%);
-  font-size: 11px;
+  font-size: 13px;
   line-height: 1.8;
 }
 
@@ -211,7 +213,7 @@
 .contactDetails dd {
   margin: 0;
   color: rgb(255 255 255 / 75%);
-  font-size: 10px;
+  font-size: 12px;
   line-height: 1.65;
 }
 
@@ -225,6 +227,7 @@
 }
 
 .whatsappButton {
+  border-radius: var(--radius-control);
   display: inline-flex;
   min-height: 48px;
   align-items: center;
@@ -272,7 +275,7 @@
   max-width: 620px;
   margin: 0;
   color: var(--navy-950);
-  font-size: clamp(24px, 2.2vw, 33px);
+  font-size: clamp(23px, 2.2vw, 29px);
   font-weight: 500;
   line-height: 1.25;
   letter-spacing: -0.045em;
@@ -306,7 +309,7 @@
 
 .field > span:first-child {
   color: #39465f;
-  font-size: 8px;
+  font-size: 10px;
   font-weight: 700;
   letter-spacing: 0.05em;
   text-transform: uppercase;
@@ -319,7 +322,7 @@
   color: var(--navy-950);
   background: #f8fafc;
   border: 1px solid #dbe2eb;
-  border-radius: 0;
+  border-radius: var(--radius-control);
   outline: none;
   transition:
     background-color 180ms ease,
@@ -331,14 +334,14 @@
 .field select {
   height: 47px;
   padding: 0 14px;
-  font-size: 11px;
+  font-size: 14px;
 }
 
 .field textarea {
   min-height: 135px;
   padding: 14px;
   resize: vertical;
-  font-size: 11px;
+  font-size: 14px;
   line-height: 1.6;
 }
 
@@ -355,6 +358,7 @@
 }
 
 .fileField {
+  border-radius: var(--radius-control);
   position: relative;
   display: flex;
   height: 47px;
@@ -400,7 +404,7 @@
 
 .consent span {
   color: #717c8f;
-  font-size: 8.5px;
+  font-size: 11px;
   line-height: 1.65;
 }
 
@@ -412,6 +416,7 @@
 }
 
 .submitArea button {
+  border-radius: var(--radius-control);
   display: inline-flex;
   min-width: 165px;
   min-height: 48px;
@@ -514,7 +519,7 @@
   }
 
   .titleColumn h2 {
-    font-size: clamp(34px, 10vw, 44px);
+    font-size: clamp(28px, 7.6vw, 34px);
   }
 
   .introText {
@@ -547,6 +552,12 @@
 
   .fullField {
     grid-column: auto;
+  }
+
+  .field input,
+  .field select,
+  .field textarea {
+    font-size: 16px;
   }
 
   .submitArea {

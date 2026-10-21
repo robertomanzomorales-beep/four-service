@@ -1,7 +1,7 @@
 .section {
   position: relative;
   overflow: hidden;
-  padding: 116px 0 105px;
+  padding: var(--section-space) 0;
   background: #f8fafd;
   scroll-margin-top: 108px;
 }
@@ -43,6 +43,7 @@
 }
 
 .sectionLabel span {
+  border-radius: 9px;
   display: grid;
   width: 30px;
   height: 30px;
@@ -102,9 +103,9 @@
   max-width: 780px;
   margin: 0;
   color: var(--navy-950);
-  font-size: clamp(39px, 3.7vw, 58px);
+  font-size: var(--section-title);
   font-weight: 500;
-  line-height: 1.08;
+  line-height: 1.16;
   letter-spacing: -0.055em;
   text-wrap: balance;
 }
@@ -160,6 +161,7 @@
 }
 
 .galleryItem {
+  border-radius: 14px;
   display: block;
   width: 100%;
   padding: 0;
@@ -392,6 +394,7 @@
 }
 
 .closeButton {
+  border-radius: 50%;
   position: absolute;
   top: 25px;
   right: 27px;
@@ -420,6 +423,7 @@
 }
 
 .lightboxArrow {
+  border-radius: 12px;
   position: absolute;
   top: 50%;
   display: grid;
@@ -546,7 +550,7 @@
   }
 
   .titleColumn h2 {
-    font-size: clamp(34px, 10vw, 44px);
+    font-size: clamp(28px, 7.6vw, 34px);
   }
 
   .introText {

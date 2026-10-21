@@ -27,7 +27,7 @@ const slides: HeroSlide[] = [
     image: "/images/hero/multiservicios-hero.webp",
     alt: "Profesional de Four Service en un entorno técnico",
     position: "center center",
-    mobilePosition: "57% center",
+    mobilePosition: "84% center",
     eyebrow: "CELERIDAD, CONOCIMIENTO Y EXPERIENCIA",
     title: "Soluciones integrales para la continuidad de su operación",
     description:

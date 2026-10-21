@@ -1,0 +1,34 @@
+.actions { position: fixed; inset: auto 0 max(22px, env(safe-area-inset-bottom)); z-index: 900; pointer-events: none; }
+.backToTop, .whatsapp {
+  position: absolute;
+  bottom: 0;
+  display: grid;
+  place-items: center;
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  border: 1px solid rgb(255 255 255 / 30%);
+  box-shadow: 0 5px 20px rgb(6 16 42 / 18%);
+  color: white;
+  pointer-events: auto;
+  transition: opacity 200ms ease, transform 200ms ease, background-color 200ms ease, visibility 200ms ease;
+}
+.backToTop { left: 24px; padding: 15px; background: var(--navy-900); opacity: 0; visibility: hidden; transform: translateY(10px); }
+.backToTop[data-visible="true"] { opacity: 1; visibility: visible; transform: translateY(0); }
+.backToTop svg { width: 23px; height: 23px; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+.whatsapp { right: 24px; width: 58px; height: 58px; padding: 15px; background: #167b42; text-decoration: none; }
+.whatsapp svg { display: block; width: 28px; height: 28px; }
+.whatsappLabel { position: absolute; right: 70px; padding: 10px 15px; background: white; color: var(--ink); box-shadow: 0 4px 18px #06102a15; border-radius: 10px; font-size: 11px; white-space: nowrap; opacity: 0; visibility: hidden; transform: translateX(5px); transition: opacity 180ms ease, transform 180ms ease; }
+.whatsapp:hover .whatsappLabel, .whatsapp:focus-visible .whatsappLabel { opacity: 1; visibility: visible; transform: none; }
+.whatsapp:hover { background: #116535; transform: translateY(-3px); }
+.backToTop:hover { background: var(--brand-blue); transform: translateY(-3px); }
+.actions[data-footer="true"] .backToTop, .actions[data-footer="true"] .whatsapp { opacity: 0; visibility: hidden; pointer-events: none; transform: translateY(12px); }
+@media(max-width:620px) {
+  .actions { bottom: max(18px, env(safe-area-inset-bottom)); }
+  .backToTop { left: 16px; width: 46px; height: 46px; padding: 12px; }
+  .whatsapp { right: 16px; width: 54px; height: 54px; padding: 13px; }
+  .whatsappLabel { display: none; }
+}
+@media(prefers-reduced-motion:reduce) {
+  .backToTop, .whatsapp, .whatsappLabel { transition: none; }
+}

@@ -1,7 +1,7 @@
 .section {
   position: relative;
   overflow: hidden;
-  padding: 122px 0 108px;
+  padding: var(--section-space) 0;
   background:
     linear-gradient(
       180deg,
@@ -71,6 +71,7 @@
   background: var(--brand-green);
   font-size: 8px;
   font-weight: 700;
+  border-radius: 9px;
 }
 
 .sectionLabel p,
@@ -109,6 +110,7 @@
   min-height: 610px;
   overflow: hidden;
   background: var(--navy-900);
+  border-radius: var(--radius-card);
 }
 
 .image {
@@ -147,6 +149,7 @@
   padding: 10px 13px;
   color: var(--navy-950);
   background: var(--brand-green);
+  border-radius: 7px;
   font-size: 8px;
   font-weight: 700;
   letter-spacing: 0.13em;
@@ -165,6 +168,7 @@
 }
 
 .locationCard {
+  border-radius: 16px;
   position: absolute;
   z-index: 3;
   right: 0;
@@ -246,9 +250,9 @@
   max-width: 680px;
   margin: 0;
   color: var(--navy-950);
-  font-size: clamp(39px, 3.7vw, 57px);
+  font-size: var(--section-title);
   font-weight: 600;
-  line-height: 1.08;
+  line-height: 1.16;
   letter-spacing: -0.055em;
   text-wrap: balance;
 }
@@ -271,6 +275,7 @@
 }
 
 .purpose {
+  border-radius: 14px;
   position: relative;
   display: grid;
   grid-template-columns: 4px 1fr;
@@ -330,7 +335,7 @@
   max-width: 410px;
   margin: 0;
   color: var(--navy-950);
-  font-size: clamp(24px, 2.1vw, 32px);
+  font-size: clamp(23px, 2.1vw, 29px);
   font-weight: 600;
   line-height: 1.25;
   letter-spacing: -0.045em;
@@ -344,6 +349,7 @@
 }
 
 .credential {
+  border-radius: 14px;
   display: grid;
   grid-template-columns: 36px 1fr;
   gap: 19px;
@@ -501,7 +507,7 @@
   }
 
   .contentColumn h2 {
-    font-size: clamp(34px, 10vw, 44px);
+    font-size: clamp(28px, 7.6vw, 34px);
   }
 
   .introduction {

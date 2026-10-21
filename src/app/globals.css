@@ -11,6 +11,10 @@
   --muted: #667085;
   --surface: #f4f7fb;
   --line: #dce3ee;
+  --radius-card: 20px;
+  --radius-control: 10px;
+  --section-title: clamp(30px, 3.1vw, 44px);
+  --section-space: clamp(76px, 7.5vw, 108px);
 }
 
 * {
@@ -20,6 +24,7 @@
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 112px;
+  scrollbar-gutter: stable;
 }
 
 body {
@@ -30,6 +35,20 @@ body {
   color: var(--ink);
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
+}
+
+html[data-page-loading="true"] {
+  overflow: hidden;
+}
+
+h1,
+h2,
+h3 {
+  overflow-wrap: break-word;
+}
+
+p {
+  text-wrap: pretty;
 }
 
 body,

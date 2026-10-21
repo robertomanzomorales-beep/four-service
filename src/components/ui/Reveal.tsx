@@ -73,9 +73,17 @@ export default function Reveal({
       }
     );
 
-    observer.observe(element);
+    const observe = () => observer.observe(element);
+    if (document.documentElement.dataset.pageLoading === "true") {
+      window.addEventListener("four:page-ready", observe, { once: true });
+    } else {
+      observe();
+    }
 
-    return () => observer.disconnect();
+    return () => {
+      observer.disconnect();
+      window.removeEventListener("four:page-ready", observe);
+    };
   }, [once]);
 
   const customProperties = {
