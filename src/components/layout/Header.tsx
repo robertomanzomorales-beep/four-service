@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import {
+  type CSSProperties,
   type MouseEvent,
   useEffect,
   useRef,
@@ -9,6 +10,7 @@ import {
 } from "react";
 import styles from "./Header.module.css";
 import BrandGeometry from "@/components/ui/BrandGeometry";
+import WhatsAppIcon from "@/components/ui/WhatsAppIcon";
 
 const navigation = [
   { label: "Inicio", href: "#inicio" },
@@ -27,9 +29,13 @@ const whatsappUrl =
 
 export default function Header() {
   const headerRef = useRef<HTMLElement>(null);
+  const navigationRef = useRef<HTMLDivElement>(null);
+  const menuButtonRef = useRef<HTMLButtonElement>(null);
+  const menuPanelRef = useRef<HTMLDivElement>(null);
   const animationFrame = useRef<number | null>(null);
 
   const [menuOpen, setMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const [activeSection, setActiveSection] =
     useState("#inicio");
 
@@ -40,8 +46,10 @@ export default function Header() {
       }
 
       animationFrame.current = requestAnimationFrame(() => {
-        const headerHeight =
-          headerRef.current?.offsetHeight ?? 108;
+        const headerHeight = Math.max(
+          navigationRef.current?.getBoundingClientRect().bottom ?? 108,
+          0
+        );
 
         const marker =
           window.scrollY + headerHeight + 110;
@@ -57,6 +65,8 @@ export default function Header() {
           }
         });
 
+        headerRef.current?.style.setProperty("--menu-top", `${headerHeight}px`);
+        setScrolled(window.scrollY > 48);
         setActiveSection((current) =>
           current === currentSection
             ? current
@@ -105,9 +115,31 @@ export default function Header() {
 
     document.body.style.overflow = "hidden";
 
+    const pageContent = Array.from(document.querySelectorAll<HTMLElement>("main, footer, [data-footer]"));
+    const previousInert = pageContent.map((element) => element.inert);
+    pageContent.forEach((element) => { element.inert = true; });
+    const focusFrame = requestAnimationFrame(() => {
+      menuPanelRef.current?.querySelector<HTMLElement>("a[href]")?.focus({ preventScroll: true });
+    });
+
     const handleKeyDown = (event: KeyboardEvent) => {
       if (event.key === "Escape") {
         setMenuOpen(false);
+        menuButtonRef.current?.focus({ preventScroll: true });
+      }
+
+      if (event.key === "Tab") {
+        const links = Array.from(menuPanelRef.current?.querySelectorAll<HTMLElement>("a[href]") ?? []);
+        const focusable = [menuButtonRef.current, ...links].filter((element): element is HTMLElement => element !== null);
+        const first = focusable[0];
+        const last = focusable.at(-1);
+        if (event.shiftKey && document.activeElement === first) {
+          event.preventDefault();
+          last?.focus();
+        } else if (!event.shiftKey && document.activeElement === last) {
+          event.preventDefault();
+          first?.focus();
+        }
       }
     };
 
@@ -128,6 +160,8 @@ export default function Header() {
     );
 
     return () => {
+      cancelAnimationFrame(focusFrame);
+      pageContent.forEach((element, index) => { element.inert = previousInert[index]; });
       document.body.style.overflow = previousOverflow;
 
       window.removeEventListener(
@@ -157,8 +191,7 @@ export default function Header() {
 
     event.preventDefault();
 
-    const headerHeight =
-      headerRef.current?.offsetHeight ?? 108;
+    const headerHeight = navigationRef.current?.offsetHeight ?? 77;
 
     const destinationPosition =
       destination.getBoundingClientRect().top +
@@ -168,8 +201,8 @@ export default function Header() {
     setActiveSection(href);
 
     window.scrollTo({
-      top: Math.max(destinationPosition, 0),
-      behavior: "smooth",
+      top: href === "#inicio" ? 0 : Math.max(destinationPosition - 12, 0),
+      behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "instant" : "smooth",
     });
 
     window.history.replaceState(null, "", href);
@@ -179,8 +212,9 @@ export default function Header() {
     <header
       ref={headerRef}
       className={styles.header}
+      data-scrolled={scrolled}
     >
-      <div className={styles.utilityBar}>
+      <div className={styles.utilityBar} inert={scrolled}>
         <div className={styles.utilityInner}>
           <a
             className={styles.email}
@@ -211,7 +245,7 @@ export default function Header() {
         </div>
       </div>
 
-      <div className={styles.navigationBar}>
+      <div ref={navigationRef} className={styles.navigationBar}>
         <div className={styles.navigationInner}>
           <a
             className={styles.logoLink}
@@ -265,10 +299,12 @@ export default function Header() {
             target="_blank"
             rel="noopener noreferrer"
           >
+            <WhatsAppIcon />
             Solicitar cotización
           </a>
 
           <button
+            ref={menuButtonRef}
             className={styles.menuButton}
             type="button"
             aria-label={
@@ -299,10 +335,12 @@ export default function Header() {
       </div>
 
       <div
+        ref={menuPanelRef}
         id="mobile-navigation"
         className={styles.mobileMenu}
         data-open={menuOpen}
         aria-hidden={!menuOpen}
+        inert={!menuOpen}
       >
         <BrandGeometry
           className={styles.mobileDecoration}
@@ -321,6 +359,9 @@ export default function Header() {
               <a
                 key={item.href}
                 href={item.href}
+                data-active={activeSection === item.href}
+                aria-current={activeSection === item.href ? "page" : undefined}
+                style={{ "--menu-item-delay": `${index * 45}ms` } as CSSProperties}
                 tabIndex={menuOpen ? 0 : -1}
                 onClick={(event) =>
                   navigateToSection(
@@ -349,6 +390,7 @@ export default function Header() {
               rel="noopener noreferrer"
               tabIndex={menuOpen ? 0 : -1}
             >
+              <WhatsAppIcon />
               Solicitar cotización
             </a>
 

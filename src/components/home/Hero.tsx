@@ -26,8 +26,8 @@ const slides: HeroSlide[] = [
   {
     image: "/images/hero/multiservicios-hero.webp",
     alt: "Profesional de Four Service en un entorno técnico",
-    position: "center center",
-    mobilePosition: "84% center",
+    position: "center top",
+    mobilePosition: "84% top",
     eyebrow: "CELERIDAD, CONOCIMIENTO Y EXPERIENCIA",
     title: "Soluciones integrales para la continuidad de su operación",
     description:
@@ -198,6 +198,7 @@ export default function Hero() {
           const imageProperties = {
             "--image-position": slide.position,
             "--mobile-image-position": slide.mobilePosition,
+            "--image-origin": slide.position,
           } as CSSProperties;
 
           return (
@@ -264,10 +265,11 @@ export default function Hero() {
           </Reveal>
         </div>
 
-        <div className={styles.sideLabel} aria-hidden="true">
-          <span />
-          FOUR SERVICE
-        </div>
+      </div>
+
+      <div className={styles.sideLabel} aria-hidden="true">
+        <span />
+        FOUR SERVICE
       </div>
 
       <div className={styles.heroFooter}>

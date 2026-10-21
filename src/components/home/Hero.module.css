@@ -37,6 +37,7 @@
   object-position: var(--image-position, center);
   filter: saturate(0.96) contrast(1.02);
   transform: scale(1.055);
+  transform-origin: var(--image-origin, center);
   transition: transform 7.8s cubic-bezier(0.2, 0.65, 0.3, 1);
 }
 
@@ -197,7 +198,8 @@
 
 .sideLabel {
   position: absolute;
-  right: -12px;
+  top: 50%;
+  right: 32px;
   display: flex;
   align-items: center;
   gap: 15px;
@@ -206,7 +208,7 @@
   font-weight: 600;
   letter-spacing: 0.22em;
   writing-mode: vertical-rl;
-  transform: rotate(180deg);
+  transform: translateY(-50%) rotate(180deg);
 }
 
 .sideLabel span {
