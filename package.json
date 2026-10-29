@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "build:hosting": "node scripts/build-hosting.mjs",
     "start": "next start",
     "lint": "eslint"
   },
@@ -21,6 +22,7 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.3.5",
+    "sharp": "0.35.4",
     "typescript": "^5"
   }
 }

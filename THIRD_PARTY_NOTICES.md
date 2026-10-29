@@ -1,5 +1,12 @@
 # Third-party notices
 
+## PHPMailer
+
+PHPMailer 7.1.1 is bundled in `hosting/php/lib/phpmailer` for the PHP hosting build.
+Source: https://github.com/PHPMailer/PHPMailer, commit
+`1bc1716a507a65e039d4ac9d9adebbbd0d346e15`.
+Licensed under LGPL-2.1; its full license is included beside the PHP source files.
+
 ## Bootstrap Icons — WhatsApp
 
 The WhatsApp SVG silhouette in `src/components/ui/WhatsAppIcon.tsx` is from

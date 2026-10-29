@@ -24,6 +24,7 @@ const whatsappUrl =
 export default function Contact() {
   const [status, setStatus] =
     useState<FormStatus>("idle");
+  const [confirmationSent, setConfirmationSent] = useState(true);
 
   const [fileName, setFileName] =
     useState("PDF, Word o imagen · máximo 8 MB");
@@ -51,15 +52,18 @@ export default function Contact() {
     setStatus("sending");
 
     try {
-      const response = await fetch("/api/contact", {
+      const response = await fetch(process.env.NEXT_PUBLIC_CONTACT_ENDPOINT || "/api/contact", {
         method: "POST",
         body: data,
       });
 
-      if (!response.ok) {
+      const result: { success?: boolean; confirmationSent?: boolean } = await response.json();
+
+      if (!response.ok || result.success !== true) {
         throw new Error("No fue posible enviar el formulario.");
       }
 
+      setConfirmationSent(result.confirmationSent !== false);
       form.reset();
       setFileName("PDF, Word o imagen · máximo 8 MB");
       setStatus("success");
@@ -411,8 +415,9 @@ export default function Contact() {
                     data-status={status}
                     aria-live="polite"
                   >
-                    {status === "success" &&
-                      "Su solicitud fue enviada correctamente. También recibirá una confirmación por correo."}
+                    {status === "success" && (confirmationSent
+                      ? "Su solicitud fue enviada correctamente. También recibirá una confirmación por correo."
+                      : "Su solicitud fue enviada correctamente. Nuestro equipo se pondrá en contacto con usted.")}
 
                     {status === "error" &&
                       "No fue posible enviar la solicitud. Inténtelo nuevamente o escríbanos directamente."}

@@ -16,6 +16,8 @@
 # next.js
 /.next/
 /out/
+/hosting-dist/
+/.hosting-build/
 
 # production
 /build
