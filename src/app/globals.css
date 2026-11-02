@@ -15,6 +15,8 @@
   --radius-control: 10px;
   --section-title: clamp(30px, 3.1vw, 44px);
   --section-space: clamp(76px, 7.5vw, 108px);
+  --section-space-start: clamp(40px, 4vw, 56px);
+  --section-heading-gap: clamp(24px, 2.5vw, 36px);
 }
 
 * {

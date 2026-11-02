@@ -74,15 +74,14 @@
   position: relative;
   z-index: 3;
   height: 77px;
-  background: rgb(254 255 253 / 97%);
+  background: rgb(254 255 253 / 99%);
   border-bottom: 1px solid rgb(13 25 51 / 8%);
   box-shadow: 0 8px 26px rgb(6 16 42 / 5%);
-  backdrop-filter: blur(15px);
   transition: background-color 300ms ease, box-shadow 350ms ease, border-color 300ms ease;
 }
 
 .header[data-scrolled="true"] .navigationBar {
-  background: rgb(254 255 253 / 94%);
+  background: rgb(254 255 253 / 98%);
   border-bottom-color: rgb(13 25 51 / 13%);
   box-shadow: 0 12px 32px rgb(6 16 42 / 11%);
 }

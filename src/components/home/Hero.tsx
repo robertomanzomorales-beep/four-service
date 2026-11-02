@@ -59,11 +59,13 @@ const AUTOPLAY_DELAY = 7000;
 const SWIPE_DISTANCE = 55;
 
 export default function Hero() {
+  const heroRef = useRef<HTMLElement>(null);
   const [activeSlide, setActiveSlide] = useState(0);
   const [manualPause, setManualPause] = useState(false);
   const [pointerInside, setPointerInside] = useState(false);
   const [focusInside, setFocusInside] = useState(false);
   const [documentVisible, setDocumentVisible] = useState(true);
+  const [heroVisible, setHeroVisible] = useState(true);
   const [reducedMotion, setReducedMotion] = useState(false);
 
   const touchStart = useRef<{ x: number; y: number } | null>(null);
@@ -75,7 +77,21 @@ export default function Hero() {
     pointerInside ||
     focusInside ||
     reducedMotion ||
+    !heroVisible ||
     !documentVisible;
+
+  useEffect(() => {
+    const hero = heroRef.current;
+    if (!hero || !("IntersectionObserver" in window)) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => setHeroVisible(entry.isIntersecting),
+      { threshold: 0 }
+    );
+
+    observer.observe(hero);
+    return () => observer.disconnect();
+  }, []);
 
   useEffect(() => {
     const motionQuery = window.matchMedia(
@@ -179,6 +195,7 @@ export default function Hero() {
 
   return (
     <section
+      ref={heroRef}
       id="inicio"
       className={styles.hero}
       aria-label="Presentación de Four Service"
@@ -198,7 +215,6 @@ export default function Hero() {
           const imageProperties = {
             "--image-position": slide.position,
             "--mobile-image-position": slide.mobilePosition,
-            "--image-origin": slide.position,
           } as CSSProperties;
 
           return (

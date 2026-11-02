@@ -40,12 +40,19 @@ export default function Header() {
     useState("#inicio");
 
   useEffect(() => {
+    const sections = navigation.map((item) => ({
+      href: item.href,
+      element: document.querySelector<HTMLElement>(item.href),
+    }));
+    let previousHeaderHeight = -1;
+
     const updateActiveSection = () => {
       if (animationFrame.current !== null) {
-        cancelAnimationFrame(animationFrame.current);
+        return;
       }
 
       animationFrame.current = requestAnimationFrame(() => {
+        animationFrame.current = null;
         const headerHeight = Math.max(
           navigationRef.current?.getBoundingClientRect().bottom ?? 108,
           0
@@ -56,16 +63,16 @@ export default function Header() {
 
         let currentSection = "#inicio";
 
-        navigation.forEach((item) => {
-          const section =
-            document.querySelector<HTMLElement>(item.href);
-
-          if (section && section.offsetTop <= marker) {
-            currentSection = item.href;
+        sections.forEach(({ href, element }) => {
+          if (element && element.offsetTop <= marker) {
+            currentSection = href;
           }
         });
 
-        headerRef.current?.style.setProperty("--menu-top", `${headerHeight}px`);
+        if (headerHeight !== previousHeaderHeight) {
+          headerRef.current?.style.setProperty("--menu-top", `${headerHeight}px`);
+          previousHeaderHeight = headerHeight;
+        }
         setScrolled(window.scrollY > 48);
         setActiveSection((current) =>
           current === currentSection
