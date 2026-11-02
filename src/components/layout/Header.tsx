@@ -113,6 +113,24 @@ export default function Header() {
   }, []);
 
   useEffect(() => {
+    const alignInitialSection = () => {
+      const href = window.location.hash;
+      if (!href || href === "#inicio" || !navigation.some((item) => item.href === href)) return;
+      document.querySelector<HTMLElement>(href)?.scrollIntoView({ block: "start", behavior: "instant" });
+    };
+
+    window.addEventListener("four:page-ready", alignInitialSection);
+    const frame = requestAnimationFrame(() => {
+      if (document.documentElement.dataset.pageLoading !== "true") alignInitialSection();
+    });
+
+    return () => {
+      cancelAnimationFrame(frame);
+      window.removeEventListener("four:page-ready", alignInitialSection);
+    };
+  }, []);
+
+  useEffect(() => {
     if (!menuOpen) {
       return;
     }
@@ -198,21 +216,17 @@ export default function Header() {
 
     event.preventDefault();
 
-    const headerHeight = navigationRef.current?.offsetHeight ?? 77;
-
-    const destinationPosition =
-      destination.getBoundingClientRect().top +
-      window.scrollY -
-      headerHeight;
-
     setActiveSection(href);
-
-    window.scrollTo({
-      top: href === "#inicio" ? 0 : Math.max(destinationPosition - 12, 0),
-      behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "instant" : "smooth",
-    });
-
     window.history.replaceState(null, "", href);
+
+    requestAnimationFrame(() => {
+      const behavior = window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "instant" : "smooth";
+      if (href === "#inicio") {
+        window.scrollTo({ top: 0, behavior });
+      } else {
+        destination.scrollIntoView({ block: "start", behavior });
+      }
+    });
   };
 
   return (

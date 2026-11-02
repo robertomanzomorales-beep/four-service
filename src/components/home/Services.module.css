@@ -5,7 +5,7 @@
   padding: var(--section-space-start) 0 var(--section-space);
   color: white;
   background: var(--navy-950);
-  scroll-margin-top: 108px;
+  scroll-margin-top: calc(var(--sticky-navigation-height) + var(--anchor-gap) - var(--section-space-start));
 }
 
 .gridBackground {
@@ -401,6 +401,7 @@
 
 @media (max-width: 820px) {
   .section {
+    --section-space-start: 36px;
     padding: 36px 0 90px;
   }
 
@@ -435,6 +436,7 @@
 
 @media (max-width: 620px) {
   .section {
+    --section-space-start: 28px;
     padding: 28px 0 72px;
   }
 

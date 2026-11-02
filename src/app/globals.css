@@ -17,6 +17,8 @@
   --section-space: clamp(76px, 7.5vw, 108px);
   --section-space-start: clamp(40px, 4vw, 56px);
   --section-heading-gap: clamp(24px, 2.5vw, 36px);
+  --sticky-navigation-height: 77px;
+  --anchor-gap: 24px;
 }
 
 * {
@@ -25,8 +27,12 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 112px;
+  scroll-padding-top: 0;
   scrollbar-gutter: stable;
+}
+
+#inicio {
+  scroll-margin-top: calc(var(--sticky-navigation-height) + 31px);
 }
 
 body {
@@ -97,8 +103,8 @@ img {
 }
 
 @media (max-width: 980px) {
-  html {
-    scroll-padding-top: 102px;
+  :root {
+    --sticky-navigation-height: 72px;
   }
 }
 

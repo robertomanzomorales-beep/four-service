@@ -3,7 +3,7 @@
   overflow: hidden;
   padding: var(--section-space-start) 0 var(--section-space);
   background: #f8fafd;
-  scroll-margin-top: 108px;
+  scroll-margin-top: calc(var(--sticky-navigation-height) + var(--anchor-gap) - var(--section-space-start));
 }
 
 .backgroundNumber {
@@ -498,6 +498,7 @@
 
 @media (max-width: 820px) {
   .section {
+    --section-space-start: 36px;
     padding: 36px 0 84px;
   }
 
@@ -542,6 +543,7 @@
 
 @media (max-width: 580px) {
   .section {
+    --section-space-start: 28px;
     padding: 28px 0 68px;
   }
 
